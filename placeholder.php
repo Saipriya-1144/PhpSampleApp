@@ -1,3 +1,3 @@
 <?php
-echo "Hello This is Placeholder";
+echo "<<<php-place-holder>>>";
 ?>
