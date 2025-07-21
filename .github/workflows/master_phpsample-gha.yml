@@ -51,9 +51,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: php-app
-
-      - name: Unzip artifact for deployment
-        run: unzip release.zip
       
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@releases/v2-fix-isLinux-set
@@ -61,5 +58,5 @@ jobs:
         with:
           app-name: 'phpsample-gha'
           slot-name: 'Production'
-          package: .
+          package: release.zip
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8C8A256B94194247B234E6784857F80B }}
